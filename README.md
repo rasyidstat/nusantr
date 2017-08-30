@@ -1,4 +1,4 @@
-# indonesia
+# nusantr
 
 This package includes things related to Indonesia. For the initial development, this package includes sf spatial data frame for:
 
@@ -17,13 +17,13 @@ to use `geom_sf` functionality (for visualization purpose).
 # install.packages("devtools")
 install.packages("sf")
 devtools::install_github("tidyverse/ggplot2")
-devtools::install_github("rasyidstat/indonesia")
+devtools::install_github("rasyidstat/nusantr")
 ```
 
 # Example
 
 ``` r
-library(indonesia)
+library(nusantr)
 hai()
 #> [1] "Selamat Datang di Indonesia!"
 ```
@@ -36,7 +36,7 @@ For the initial development, it only contains two regions: "indonesia" and "jaka
 
 ``` r
 library(sf)
-library(indonesia)
+library(nusantr)
 
 # get indonesia map for 'provinsi' level
 indonesia_provinsi <- id_map("indonesia", "provinsi")
