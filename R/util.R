@@ -11,7 +11,7 @@
 #' @export
 #' @examples
 #' nik_to_bd(1671065412990099)
-#' #> [1] "1999-12-14"
+#' ## [1] "1999-12-14"
 nik_to_bd <- function (nik) {
   x <- substr(nik, 7, 12)
 
@@ -42,5 +42,35 @@ nik_to_bd <- function (nik) {
     }
   }
 
+  x
+}
+
+#' Get city/regency/province based on NIK
+#'
+#' @description
+#' NIK (*Nomor Induk Kependudukan*) is a unique ID for Indonesia citizens
+#' ([https://en.wikipedia.org/wiki/Indonesian_identity_card]([https://en.wikipedia.org/wiki/Indonesian_identity_card])).
+#' NIK contains geographic location where the ID card is built and the birth date of the citizen.
+#'
+#' @md
+#' @param nik NIK (KTP ID)
+#'
+#' @export
+#' @examples
+#' nik_to_city(1671065412990099)
+#' ## [1] "KOTA PALEMBANG"
+#' nik_to_prov(1671065412990099)
+#' ## [1] "SUMATERA SELATAN"
+nik_to_city <- function (nik) {
+  x <- substr(nik, 1, 4)
+  x <- with(kota, kota[match(x, id)])
+  x
+}
+
+#' @rdname nik_to_city
+#' @export
+nik_to_prov <- function (nik) {
+  x <- substr(nik, 1, 2)
+  x <- with(provinsi, provinsi[match(x, id)])
   x
 }
