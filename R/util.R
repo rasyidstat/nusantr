@@ -1,17 +1,50 @@
-#' Get birth date based on NIK
+#' Parse birthdate, geolevel (city/regency/province) from NIK
 #'
+#' @name nik_to_all
 #' @description
 #' NIK (*Nomor Induk Kependudukan*) is a unique ID for Indonesia citizens
 #' ([https://en.wikipedia.org/wiki/Indonesian_identity_card]([https://en.wikipedia.org/wiki/Indonesian_identity_card])).
-#' NIK contains geographic location where the ID card is built and the birth date of the citizen.
+#' NIK contains geographic location where the ID card is built and the birthdate of the holder.
 #'
 #' @md
 #' @param nik NIK (KTP ID)
 #'
-#' @export
+#' @return \code{nik_to_bd} returns a Date vector.
+#' \code{nik_to_city} and \code{nik_to_prov} return a character vector.
+#' \code{nik_to_all} returns a list of those three functions output.
+#'
 #' @examples
-#' nik_to_bd(1671065412990099)
-#' ## [1] "1999-12-14"
+#' nik <- "1671065412990099"
+#' nik_to_bd(nik)
+#' nik_to_city(nik)
+#' nik_to_prov(nik)
+#' nik_to_all(nik)
+#'
+#' # using nik_to_all
+#' df <- data.frame(nik = rep("1671065412990099"), 5)
+#' df %>%
+#'   mutate(out = map(nik, nik_to_all),
+#'          out = map(out, data.frame)) %>%
+#'   unnest()
+#'
+#' # not using nik_to_all
+#' df %>%
+#'   mutate(bd = nik_to_bd(nik),
+#'          city = nik_to_bd(city),
+#'          prov = nik_to_bd(prov))
+NULL
+
+#' @rdname nik_to_all
+#' @export
+nik_to_all <- function (nik) {
+  x <- list(bd = nik_to_bd(nik),
+            city = nik_to_city(nik),
+            prov = nik_to_prov(nik))
+  x
+}
+
+#' @rdname nik_to_all
+#' @export
 nik_to_bd <- function (nik) {
   x <- substr(nik, 7, 12)
 
@@ -45,29 +78,15 @@ nik_to_bd <- function (nik) {
   x
 }
 
-#' Get city/regency/province based on NIK
-#'
-#' @description
-#' NIK (*Nomor Induk Kependudukan*) is a unique ID for Indonesia citizens
-#' ([https://en.wikipedia.org/wiki/Indonesian_identity_card]([https://en.wikipedia.org/wiki/Indonesian_identity_card])).
-#' NIK contains geographic location where the ID card is built and the birth date of the citizen.
-#'
-#' @md
-#' @param nik NIK (KTP ID)
-#'
+#' @rdname nik_to_all
 #' @export
-#' @examples
-#' nik_to_city(1671065412990099)
-#' ## [1] "KOTA PALEMBANG"
-#' nik_to_prov(1671065412990099)
-#' ## [1] "SUMATERA SELATAN"
 nik_to_city <- function (nik) {
   x <- substr(nik, 1, 4)
   x <- with(kota, kota[match(x, id)])
   x
 }
 
-#' @rdname nik_to_city
+#' @rdname nik_to_all
 #' @export
 nik_to_prov <- function (nik) {
   x <- substr(nik, 1, 2)

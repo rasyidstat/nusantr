@@ -1,8 +1,8 @@
 Package: nusantr
 Type: Package
 Title: We R Nusantara
-Version: 0.2.1
-Date: 2017-06-18
+Version: 0.2.2
+Date: 2017-10-08
 Author: Rasyid Ridha
 Maintainer: Rasyid Ridha <rasyidstat@gmail.com>
 Description: An R package contains Indonesia spatial data frame and many awesome things related to Indonesia
@@ -10,5 +10,6 @@ License: Rasyid Ridha
 Encoding: UTF-8
 LazyData: true
 Imports:
-    sf
+    sf, 
+    tibble
 RoxygenNote: 6.0.1
