@@ -1,3 +1,6 @@
+# nusantr 0.2.3.0001
+* Add new columns on `provinsi` dataset
+
 # nusantr 0.2.2
 
 * Add `NEWS.md` to track changes
