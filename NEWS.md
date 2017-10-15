@@ -1,4 +1,7 @@
-# nusantr 0.2.3.0001
+# nusantr 0.2.3
+* Add function to parse gender from NIK
+* Fix `nik_to_bd`
+* Add select option using `nik_to_all`
 * Add new columns on `provinsi` dataset
 
 # nusantr 0.2.2

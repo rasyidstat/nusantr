@@ -3,12 +3,15 @@
 \name{nik_to_all}
 \alias{nik_to_all}
 \alias{nik_to_all}
+\alias{nik_to_gender}
 \alias{nik_to_bd}
 \alias{nik_to_city}
 \alias{nik_to_prov}
-\title{Parse birthdate, geolevel (city/regency/province) from NIK}
+\title{Parse gender, birthdate, geolevel (city/regency/province) from NIK}
 \usage{
-nik_to_all(nik)
+nik_to_all(nik, select = c("gender", "bd", "city", "prov"))
+
+nik_to_gender(nik, return = "default")
 
 nik_to_bd(nik)
 
@@ -20,14 +23,17 @@ nik_to_prov(nik)
 \item{nik}{NIK (KTP ID)}
 }
 \value{
-\code{nik_to_bd} returns a Date vector.
-\code{nik_to_city} and \code{nik_to_prov} return a character vector.
-\code{nik_to_all} returns a list of those three functions output.
+\itemize{
+\item \code{nik_to_gender} returns a factor vector.
+\item \code{nik_to_bd} returns a Date vector.
+\item \code{nik_to_city} and \code{nik_to_prov} return a character vector.
+\item \code{nik_to_all} returns a list of those four functions output.
+}
 }
 \description{
 NIK (\emph{Nomor Induk Kependudukan}) is a unique ID for Indonesia citizens
 (\href{[https://en.wikipedia.org/wiki/Indonesian_identity_card]}{https://en.wikipedia.org/wiki/Indonesian_identity_card}).
-NIK contains geographic location where the ID card is built and the birthdate of the holder.
+NIK contains geographic location where the ID card is built, gender and birthdate of the holder.
 }
 \examples{
 nik <- "1671065412990099"
@@ -35,6 +41,7 @@ nik_to_bd(nik)
 nik_to_city(nik)
 nik_to_prov(nik)
 nik_to_all(nik)
+nik_to_all(nik, select=c("gender","bd"))
 
 # using nik_to_all
 df <- data.frame(nik = rep("1671065412990099"), 5)
