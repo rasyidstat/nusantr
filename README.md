@@ -1,4 +1,4 @@
-# nusantr
+# nusantr <img src="man/figures/logo.png" align="right" height="140" width="120"/>
 
 This package includes things related to Indonesia. For the initial development, this package includes sf spatial data frame for:
 

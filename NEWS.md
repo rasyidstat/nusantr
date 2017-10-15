@@ -1,3 +1,6 @@
+# nusantr 0.2.4.0001
+* Add hex logo
+
 # nusantr 0.2.3
 * Add function to parse gender from NIK
 * Fix `nik_to_bd`
