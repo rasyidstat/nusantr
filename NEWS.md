@@ -1,5 +1,11 @@
+# nusantr 0.2.5.0001
+* Add new columns on `kota` dataset
+* Add new options for `nik_to_*` functions
+* Remove indonesia spatial data for a while
+
 # nusantr 0.2.4.0001
 * Add hex logo
+* Add `README.Rmd`
 
 # nusantr 0.2.3
 * Add function to parse gender from NIK

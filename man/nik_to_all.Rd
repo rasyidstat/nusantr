@@ -9,18 +9,21 @@
 \alias{nik_to_prov}
 \title{Parse gender, birthdate, geolevel (city/regency/province) from NIK}
 \usage{
-nik_to_all(nik, select = c("gender", "bd", "city", "prov"))
+nik_to_all(nik, select = c("gender", "bd", "city", "prov"),
+  typec = "default", typep = "default")
 
 nik_to_gender(nik, return = "default")
 
 nik_to_bd(nik)
 
-nik_to_city(nik)
+nik_to_city(nik, type = "default")
 
-nik_to_prov(nik)
+nik_to_prov(nik, type = "default")
 }
 \arguments{
 \item{nik}{NIK (KTP ID)}
+
+\item{type}{return format (\code{default}, \code{lc}, \code{short} or \code{abb})}
 }
 \value{
 \itemize{

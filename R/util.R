@@ -8,6 +8,7 @@
 #'
 #' @md
 #' @param nik NIK (KTP ID)
+#' @param type return format (`default`, `lc`, `short` or `abb`)
 #'
 #' @return * `nik_to_gender` returns a factor vector.
 #' * `nik_to_bd` returns a Date vector.
@@ -39,7 +40,10 @@ NULL
 
 #' @rdname nik_to_all
 #' @export
-nik_to_all <- function (nik, select=c("gender","bd","city","prov")) {
+nik_to_all <- function (nik,
+                        select = c("gender","bd","city","prov"),
+                        typec = "default",
+                        typep = "default") {
   if ("gender" %in% select) {
     gender <- nik_to_gender(nik)
   } else {
@@ -51,12 +55,12 @@ nik_to_all <- function (nik, select=c("gender","bd","city","prov")) {
     bd <- NULL
   }
   if ("city" %in% select) {
-    city <- nik_to_city(nik)
+    city <- nik_to_city(nik, type = typec)
   } else {
     city <- NULL
   }
   if ("prov" %in% select) {
-    prov <- nik_to_prov(nik)
+    prov <- nik_to_prov(nik, type = typep)
   } else {
     prov <- NULL
   }
@@ -134,16 +138,23 @@ nik_to_bd <- function (nik) {
 
 #' @rdname nik_to_all
 #' @export
-nik_to_city <- function (nik) {
+nik_to_city <- function (nik, type = "default") {
   x <- substr(nik, 1, 4)
-  x <- with(kota, kota[match(x, id)])
+  x <- switch(type,
+              default = with(kota, kota[match(x, id)]),
+              lc = with(kota, kota2[match(x, id)]),
+              short = with(kota, kota3[match(x, id)]))
   x
 }
 
 #' @rdname nik_to_all
 #' @export
-nik_to_prov <- function (nik) {
+nik_to_prov <- function (nik, type = "default") {
   x <- substr(nik, 1, 2)
-  x <- with(provinsi, provinsi[match(x, id)])
+  x <- switch(type,
+              default = with(provinsi, provinsi[match(x, id)]),
+              lc = with(provinsi, provinsi2[match(x, id)]),
+              short = with(provinsi, provinsi_short[match(x, id)]),
+              abb = with(provinsi, provinsi_abb[match(x, id)]))
   x
 }

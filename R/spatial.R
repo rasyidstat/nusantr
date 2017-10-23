@@ -25,7 +25,7 @@ id_map <- function (region = "jakarta",
       reg <- readRDS(system.file("data", "spatial",
                                  "jakarta_kecamatan.rds", package = "indonesia"))
     } else {
-      message("Error : for Jakarta region, level should be 'kecamatan', 'kelurahan' or 'rw'")
+      stop("Error : for Jakarta region, level should be 'kecamatan', 'kelurahan' or 'rw'")
     }
   }
 
@@ -38,7 +38,7 @@ id_map <- function (region = "jakarta",
       reg <- readRDS(system.file("data", "spatial",
                                  "indonesia_provinsi.rds", package = "indonesia"))
     } else {
-      message("Error: for Indonesia region, level should be 'provinsi' or 'kota'")
+      stop("Error: for Indonesia region, level should be 'provinsi' or 'kota'")
     }
   }
 
