@@ -3,7 +3,7 @@
 nusantr: Indonesia R package <img src="man/figures/logo.png" align="right" height="140" width="120"/>
 =====================================================================================================
 
-We R Nusantara!
+*We R Nusantara!*
 
 `nusantr` is an R package which contains:
 
@@ -38,8 +38,7 @@ library(nusantr)
 # get indonesia map for 'provinsi' level
 indonesia_provinsi <- id_map("indonesia", "provinsi")
 
-1# get indonesia map for 'kota' level
-#> [1] 1
+# get indonesia map for 'kota' level
 indonesia_kota <- id_map("indonesia", "kota")
 
 # get jakarta map for 'kelurahan' level
