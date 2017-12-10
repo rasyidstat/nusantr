@@ -16,12 +16,15 @@ Installation
 
 You need to use `sf` package to enable the class of sf data frame.
 
+``` r
+# install.packages("devtools")
+install.packages("sf")
+install.packages("tidyverse")
+devtools::install_github("rasyidstat/nusantr")
+```
+
 Example
 -------
-
-``` r
-library(nusantr)
-```
 
 You can get Indonesia map by using `id_map` function that will return sf spatial data frame. It contains two parameters: region and level and currently only contains two regions: "indonesia" and "jakarta".
 
