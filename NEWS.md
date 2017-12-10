@@ -1,9 +1,17 @@
-# nusantr 0.2.5.0001
+# nusantr 0.3.0
+* Update Indonesia and Jakarta spatial data
+* Download Indonesia spatial data based on need using `map_download` and `map_convert`
+* Update `kota` dataset (`id` column to `kota_id` column)
+* Update `provinsi` dataset (`id` column to `provinsi_id` column)
+* Add `nama` dataset
+* Update `README.Rmd`
+
+# nusantr 0.2.5
 * Add new columns on `kota` dataset
 * Add new options for `nik_to_*` functions
-* Remove indonesia spatial data for a while
+* Remove Indonesia spatial data for a while
 
-# nusantr 0.2.4.0001
+# nusantr 0.2.4
 * Add hex logo
 * Add `README.Rmd`
 

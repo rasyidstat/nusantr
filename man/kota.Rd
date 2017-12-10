@@ -4,7 +4,14 @@
 \name{kota}
 \alias{kota}
 \title{Indonesia city and regency data}
-\format{A data frame with two variabels: \code{id}, \code{kota}}
+\format{A tibble containing name and ID of 514 cities/regencies in Indonesia:
+\describe{
+  \item{kota_id}{Kota ID}
+  \item{kota}{Kota name in uppercase}
+  \item{kota2}{Kota name in lettercase}
+  \item{kota3}{Kota name in lettercase without "Kota" and "Kabupaten"}
+  \item{type}{Type of geolevel2, "Kota" or "Kabupaten"}
+}}
 \source{
 \href{https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia/blob/master/csv/regencies.csv}{https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia/blob/master/csv/regencies.csv}
 }

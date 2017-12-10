@@ -3,17 +3,18 @@
 nusantr: Indonesia R package <img src="man/figures/logo.png" align="right" height="140" width="120"/>
 =====================================================================================================
 
-This package includes things related to Indonesia. For the initial development, this package includes sf spatial data frame for:
+We R Nusantara!
 
--   Indonesia: 'provinsi' and 'kota' level
--   Jakarta: 'kecamatan', 'kelurahan' and 'RW' level
+`nusantr` is an R package which contains:
 
-For Indonesia map, the data is get from [GADM](http://www.gadm.org/) and for Jakarta map, the data is get from [Jakarta Smart City](http://smartcity.jakarta.go.id).
+-   Indonesia map in spatial data frame format
+-   Datasets related to Indonesia
+-   Functionality to convert [NIK](https://en.wikipedia.org/wiki/Indonesian_identity_card) to location, gender and birthdate.
 
 Installation
 ------------
 
-You need to use `sf` package to enable the class of sf data frame. Also, you need to install `ggplot2` development version to use `geom_sf` functionality (for visualization purpose).
+You need to use `sf` package to enable the class of sf data frame.
 
 Example
 -------
@@ -22,21 +23,23 @@ Example
 library(nusantr)
 ```
 
-`id_map` is the function that return sf spatial data frame. It contains two parameters: region and level. For the initial development, it only contains two regions: "indonesia" and "jakarta".
+You can get Indonesia map by using `id_map` function that will return sf spatial data frame. It contains two parameters: region and level and currently only contains two regions: "indonesia" and "jakarta".
 
 -   "indonesia" consists of two geographical levels such as "provinsi" and "kota".
 -   "jakarta" consists of three geographical levels such as "kecamatan", "kelurahan" and "rw".
 
+The data for Indonesia map will be dowloaded from [GADM](http://www.gadm.org/) and the data for Jakarta map is get from from [Jakarta Smart City](http://smartcity.jakarta.go.id).
+
 ``` r
 library(sf)
-#> Warning: package 'sf' was built under R version 3.4.2
 #> Linking to GEOS 3.6.1, GDAL 2.2.0, proj.4 4.9.3
 library(nusantr)
 
 # get indonesia map for 'provinsi' level
 indonesia_provinsi <- id_map("indonesia", "provinsi")
 
-# get indonesia map for 'kota' level
+1# get indonesia map for 'kota' level
+#> [1] 1
 indonesia_kota <- id_map("indonesia", "kota")
 
 # get jakarta map for 'kelurahan' level
@@ -49,25 +52,32 @@ head(jakarta_kelurahan)
 #> bbox:           xmin: 106.7928 ymin: -6.373226 xmax: 106.92 ymax: -6.331914
 #> epsg (SRID):    4326
 #> proj4string:    +proj=longlat +datum=WGS84 +no_defs
-#>   kode_provinsi                 nama_provinsi kode_kota       nama_kota
-#> 1            31 DAERAH KHUSUS IBUKOTA JAKARTA      3171 Jakarta Selatan
-#> 2            31 DAERAH KHUSUS IBUKOTA JAKARTA      3172   Jakarta Timur
-#> 3            31 DAERAH KHUSUS IBUKOTA JAKARTA      3172   Jakarta Timur
-#> 4            31 DAERAH KHUSUS IBUKOTA JAKARTA      3172   Jakarta Timur
-#> 5            31 DAERAH KHUSUS IBUKOTA JAKARTA      3172   Jakarta Timur
-#> 6            31 DAERAH KHUSUS IBUKOTA JAKARTA      3171 Jakarta Selatan
-#>   kode_kecamatan nama_kecamatan kode_kelurahan  nama_kelurahan
-#> 1        3171010      Jagakarsa     3171010001         Cipedak
-#> 2        3172020        Ciracas     3172020001         Cibubur
-#> 3        3172030       Cipayung     3172030001  Pondok Ranggon
-#> 4        3172030       Cipayung     3172030003          Munjul
-#> 5        3172010     Pasar Rebo     3172010001         Pekayon
-#> 6        3171010      Jagakarsa     3171010002 Srengseng Sawah
-#>                         geometry
-#> 1 POLYGON ((106.800101597915 ...
-#> 2 POLYGON ((106.884067296907 ...
-#> 3 POLYGON ((106.894108150063 ...
-#> 4 POLYGON ((106.902775722093 ...
-#> 5 POLYGON ((106.868279333562 ...
-#> 6 POLYGON ((106.835497431474 ...
+#> # A tibble: 6 x 9
+#>   provinsi_id    provinsi kota_id            kota kecamatan_id  kecamatan
+#>         <chr>       <chr>   <chr>           <chr>        <chr>      <chr>
+#> 1          31 DKI Jakarta    3171 Jakarta Selatan      3171010  Jagakarsa
+#> 2          31 DKI Jakarta    3172   Jakarta Timur      3172020    Ciracas
+#> 3          31 DKI Jakarta    3172   Jakarta Timur      3172030   Cipayung
+#> 4          31 DKI Jakarta    3172   Jakarta Timur      3172030   Cipayung
+#> 5          31 DKI Jakarta    3172   Jakarta Timur      3172010 Pasar Rebo
+#> # ... with 1 more rows, and 3 more variables: kelurahan_id <chr>,
+#> #   kelurahan <chr>, geometry <simple_feature>
+```
+
+You also can convert [NIK](https://en.wikipedia.org/wiki/Indonesian_identity_card) (*Nomor Induk Kependudukan*) or KTP ID to location (city and province), gender and birthdate using `nik_to_all`, `nik_to_gender`, `nik_to_bd`, `nik_to_city` or `nik_to_prov`.
+
+``` r
+nik_to_all("3173060101000010")
+#> $gender
+#> [1] Laki-laki
+#> Levels: Laki-laki Perempuan
+#> 
+#> $bd
+#> [1] "2000-01-01"
+#> 
+#> $city
+#> [1] "KOTA JAKARTA PUSAT"
+#> 
+#> $prov
+#> [1] "DKI JAKARTA"
 ```

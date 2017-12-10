@@ -16,18 +16,17 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 
 # nusantr: Indonesia R package <img src="man/figures/logo.png" align="right" height="140" width="120"/>
 
-This package includes things related to Indonesia. For the initial development, this package includes sf spatial data frame for:
+We R Nusantara!
 
-- Indonesia: 'provinsi' and 'kota' level
-- Jakarta: 'kecamatan', 'kelurahan' and 'RW' level
+`nusantr` is an R package which contains: 
 
-For Indonesia map, the data is get from [GADM](http://www.gadm.org/) and for Jakarta map, 
-the data is get from [Jakarta Smart City](http://smartcity.jakarta.go.id).
+- Indonesia map in spatial data frame format
+- Datasets related to Indonesia 
+- Functionality to convert [NIK](https://en.wikipedia.org/wiki/Indonesian_identity_card) to location, gender and birthdate.
 
 ## Installation
 
-You need to use `sf` package to enable the class of sf data frame. Also, you need to install `ggplot2` development version 
-to use `geom_sf` functionality (for visualization purpose).
+You need to use `sf` package to enable the class of sf data frame.
 
 ```{r, eval=FALSE, include=FALSE}
 # install.packages("devtools")
@@ -42,11 +41,12 @@ devtools::install_github("rasyidstat/nusantr")
 library(nusantr)
 ```
 
-`id_map` is the function that return sf spatial data frame. It contains two parameters: region and level. 
-For the initial development, it only contains two regions: "indonesia" and "jakarta".
+You can get Indonesia map by using `id_map` function that will return sf spatial data frame. It contains two parameters: region and level and currently only contains two regions: "indonesia" and "jakarta".
 
 - "indonesia" consists of two geographical levels such as "provinsi" and "kota".
 - "jakarta" consists of three geographical levels such as "kecamatan", "kelurahan" and "rw".
+
+The data for Indonesia map will be dowloaded from [GADM](http://www.gadm.org/) and the data for Jakarta map is get from from [Jakarta Smart City](http://smartcity.jakarta.go.id).
 
 ```{r}
 library(sf)
@@ -55,12 +55,18 @@ library(nusantr)
 # get indonesia map for 'provinsi' level
 indonesia_provinsi <- id_map("indonesia", "provinsi")
 
-# get indonesia map for 'kota' level
+1# get indonesia map for 'kota' level
 indonesia_kota <- id_map("indonesia", "kota")
 
 # get jakarta map for 'kelurahan' level
 jakarta_kelurahan <- id_map("jakarta", "kelurahan")
 
 head(jakarta_kelurahan)
+```
+
+You also can convert [NIK](https://en.wikipedia.org/wiki/Indonesian_identity_card) (*Nomor Induk Kependudukan*) or KTP ID to location (city and province), gender and birthdate using `nik_to_all`, `nik_to_gender`, `nik_to_bd`, `nik_to_city` or `nik_to_prov`.
+
+```{r}
+nik_to_all("3173060101000010")
 ```
 

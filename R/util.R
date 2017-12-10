@@ -141,9 +141,9 @@ nik_to_bd <- function (nik) {
 nik_to_city <- function (nik, type = "default") {
   x <- substr(nik, 1, 4)
   x <- switch(type,
-              default = with(kota, kota[match(x, id)]),
-              lc = with(kota, kota2[match(x, id)]),
-              short = with(kota, kota3[match(x, id)]))
+              default = with(kota, kota[match(x, kota_id)]),
+              lc = with(kota, kota2[match(x, kota_id)]),
+              short = with(kota, kota3[match(x, kota_id)]))
   x
 }
 
@@ -152,9 +152,9 @@ nik_to_city <- function (nik, type = "default") {
 nik_to_prov <- function (nik, type = "default") {
   x <- substr(nik, 1, 2)
   x <- switch(type,
-              default = with(provinsi, provinsi[match(x, id)]),
-              lc = with(provinsi, provinsi2[match(x, id)]),
-              short = with(provinsi, provinsi_short[match(x, id)]),
-              abb = with(provinsi, provinsi_abb[match(x, id)]))
+              default = with(provinsi, provinsi[match(x, provinsi_id)]),
+              lc = with(provinsi, provinsi2[match(x, provinsi_id)]),
+              short = with(provinsi, provinsi_short[match(x, provinsi_id)]),
+              abb = with(provinsi, provinsi_abb[match(x, provinsi_id)]))
   x
 }

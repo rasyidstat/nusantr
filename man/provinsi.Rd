@@ -4,7 +4,16 @@
 \name{provinsi}
 \alias{provinsi}
 \title{Indonesia province data}
-\format{A data frame with two variabels: \code{id}, \code{provinsi}}
+\format{A tibble containing name and ID of 34 provinces in Indonesia:
+\describe{
+  \item{provinsi_id}{Provinsi ID}
+  \item{provinsi}{Provinsi name in uppercase}
+  \item{provinsi2}{Provinsi name in lettercase}
+  \item{provinsi_short}{Short name of provinsi}
+  \item{provinsi_abb}{Abbreviate name of provinsi}
+  \item{X}{Tile grid map of provinsi, X position}
+  \item{Y}{Tile grid map of provinsi, Y position}
+}}
 \source{
 \href{https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia/blob/master/csv/provinces.csv}{https://github.com/edwardsamuel/Wilayah-Administratif-Indonesia/blob/master/csv/provinces.csv}
 }
