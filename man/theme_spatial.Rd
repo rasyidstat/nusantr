@@ -4,12 +4,12 @@
 \alias{theme_spatial}
 \title{Clean ggplot2 theme for geom_sf spatial visualization}
 \usage{
-theme_spatial(legend.inside = TRUE, base_family = "DIN")
+theme_spatial(legend.inside = TRUE, base_family = "Roboto Condensed")
 }
 \arguments{
 \item{legend.inside}{\code{TRUE}}
 
-\item{base_family}{\code{DIN} font}
+\item{base_family}{\code{Roboto Condensed} font}
 }
 \description{
 Clean ggplot2 theme for geom_sf spatial visualization

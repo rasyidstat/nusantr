@@ -11,11 +11,9 @@
 #' @param folder download folder location
 #' @param filename name of the file (zip)
 #' @param url url location of the file
+#' @param output output location
 #'
 #' @export
-#' @examples
-#' map_download()
-#' map_convert()
 NULL
 
 #' @rdname map_download
@@ -45,9 +43,9 @@ map_convert <- function(folder = paste0(system.file("data", package = "nusantr")
 {
 
   # load necessary libs
-  require(sf, quietly = TRUE)
-  require(tibble, quietly = TRUE)
-  require(dplyr, quietly = TRUE)
+  requireNamespace("sf", quietly = TRUE)
+  requireNamespace("tibble", quietly = TRUE)
+  requireNamespace("dplyr", quietly = TRUE)
 
   # unzip the file
   message("Unzipping the file")

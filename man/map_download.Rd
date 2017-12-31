@@ -20,13 +20,11 @@ map_convert(folder = paste0(system.file("data", package = "nusantr"), "/raw"),
 \item{filename}{name of the file (zip)}
 
 \item{url}{url location of the file}
+
+\item{output}{output location}
 }
 \description{
 Download and get Indonesia map from
 \href{[http://biogeo.ucdavis.edu/data/gadm2.8/shp/IDN_adm_shp.zip]}{http://biogeo.ucdavis.edu/data/gadm2.8/shp/IDN_adm_shp.zip}
 and convert them to spatial data frame (sf).
-}
-\examples{
-map_download()
-map_convert()
 }

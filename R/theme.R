@@ -2,10 +2,10 @@
 #'
 #' @md
 #' @param legend.inside `TRUE`
-#' @param base_family `DIN` font
+#' @param base_family `Roboto Condensed` font
 #'
 #' @export
-theme_spatial <- function (legend.inside = TRUE, base_family = "DIN") {
+theme_spatial <- function (legend.inside = TRUE, base_family = "Roboto Condensed") {
   ret <- ggplot2::theme(line =               element_blank(),
                         rect =               element_blank(),
                         axis.text =          element_blank(),

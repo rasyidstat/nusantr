@@ -1,3 +1,7 @@
+# nusantr 0.3.0.9000
+* Add MIT license
+* Fix and clean up some code
+
 # nusantr 0.3.0
 * Update Indonesia and Jakarta spatial data
 * Download Indonesia spatial data based on need using `map_download` and `map_convert`

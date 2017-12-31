@@ -8,7 +8,11 @@
 #'
 #' @md
 #' @param nik NIK (KTP ID)
+#' @param select select (`gender`, `bd`, `city` or `prov`)
 #' @param type return format (`default`, `lc`, `short` or `abb`)
+#' @param typec return format for city (`default`, `lc` or `short`)
+#' @param typep return format for province (`default`, `lc`, `short` or `abb`)
+#' @param return `nik_to_gender` return type (`default`, `short` or `abb`)
 #'
 #' @return * `nik_to_gender` returns a factor vector.
 #' * `nik_to_bd` returns a Date vector.
@@ -26,6 +30,7 @@
 #'
 #' # using nik_to_all
 #' df <- data.frame(nik = rep("1671065412990099"), 5)
+#' \dontrun{
 #' df %>%
 #'   mutate(out = map(nik, nik_to_all),
 #'          out = map(out, data.frame)) %>%
@@ -36,6 +41,7 @@
 #'   mutate(bd = nik_to_bd(nik),
 #'          city = nik_to_bd(city),
 #'          prov = nik_to_bd(prov))
+#' }
 NULL
 
 #' @rdname nik_to_all
@@ -85,7 +91,7 @@ nik_to_all <- function (nik,
 
 #' @rdname nik_to_all
 #' @export
-nik_to_gender <- function (nik, return="default") {
+nik_to_gender <- function (nik, return = "default") {
   if (return == "default"|return == 1) {
     ret <- c("Laki-laki", "Perempuan")
   }

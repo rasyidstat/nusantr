@@ -23,6 +23,14 @@ nik_to_prov(nik, type = "default")
 \arguments{
 \item{nik}{NIK (KTP ID)}
 
+\item{select}{select (\code{gender}, \code{bd}, \code{city} or \code{prov})}
+
+\item{typec}{return format for city (\code{default}, \code{lc} or \code{short})}
+
+\item{typep}{return format for province (\code{default}, \code{lc}, \code{short} or \code{abb})}
+
+\item{return}{\code{nik_to_gender} return type (\code{default}, \code{short} or \code{abb})}
+
 \item{type}{return format (\code{default}, \code{lc}, \code{short} or \code{abb})}
 }
 \value{

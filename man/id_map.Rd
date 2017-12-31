@@ -12,11 +12,15 @@ id_map(region = "jakarta", level = "default", folder = system.file("data",
 
 \item{level}{\code{kelurahan}, \code{rw} and \code{kecamatan} for \code{jakarta} region (\code{default} is \code{kelurahan}).
 \code{kota} or \code{provinsi} for \code{indonesia} region (\code{default} is \code{provinsi}).}
+
+\item{folder}{read map folder}
 }
 \description{
 Get spatial data frame of Indonesia or Jakarta map
 }
 \examples{
+\dontrun{
 id_map("indonesia", "kota")
 id_map("jakarta", "rw")
+}
 }

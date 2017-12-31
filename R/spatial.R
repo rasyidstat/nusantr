@@ -4,11 +4,14 @@
 #' @param region `jakarta` or `indonesia`
 #' @param level `kelurahan`, `rw` and `kecamatan` for `jakarta` region (`default` is `kelurahan`).
 #' `kota` or `provinsi` for `indonesia` region (`default` is `provinsi`).
+#' @param folder read map folder
 #'
 #' @export
 #' @examples
+#' \dontrun{
 #' id_map("indonesia", "kota")
 #' id_map("jakarta", "rw")
+#' }
 id_map <- function (region = "jakarta",
                     level = "default",
                     folder = system.file("data", "spatial", package = "nusantr")) {
