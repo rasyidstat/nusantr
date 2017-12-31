@@ -56,6 +56,7 @@ nik_to_all(nik, select=c("gender","bd"))
 
 # using nik_to_all
 df <- data.frame(nik = rep("1671065412990099"), 5)
+\dontrun{
 df \%>\%
   mutate(out = map(nik, nik_to_all),
          out = map(out, data.frame)) \%>\%
@@ -66,4 +67,5 @@ df \%>\%
   mutate(bd = nik_to_bd(nik),
          city = nik_to_bd(city),
          prov = nik_to_bd(prov))
+}
 }
