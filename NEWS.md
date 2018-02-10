@@ -1,6 +1,7 @@
-# nusantr 0.3.0.9000
+# nusantr 0.3.1
 * Add MIT license
 * Fix and clean up some code
+* Add function to translate day/month name
 
 # nusantr 0.3.0
 * Update Indonesia and Jakarta spatial data
