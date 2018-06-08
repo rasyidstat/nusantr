@@ -1,3 +1,6 @@
+# nusantr 0.3.1.0001
+* Remove `theme_spatial`
+
 # nusantr 0.3.1
 * Add MIT license
 * Fix and clean up some code
