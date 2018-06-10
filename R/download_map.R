@@ -43,9 +43,9 @@ map_convert <- function(folder = paste0(system.file("data", package = "nusantr")
 {
 
   # load necessary libs
-  requireNamespace("sf", quietly = TRUE)
-  requireNamespace("tibble", quietly = TRUE)
-  requireNamespace("dplyr", quietly = TRUE)
+  require("sf", quietly = TRUE)
+  require("tibble", quietly = TRUE)
+  require("dplyr", quietly = TRUE)
 
   # unzip the file
   message("Unzipping the file")
@@ -53,7 +53,7 @@ map_convert <- function(folder = paste0(system.file("data", package = "nusantr")
 
   # provinsi
   message("Processing provinsi spatial data")
-  adm1 <- read_sf(sprintf("%s/%s", folder, "IDN_adm1.shp"))
+  adm1 <- sf::read_sf(sprintf("%s/%s", folder, "IDN_adm1.shp"))
   adm1 <- as.tibble(adm1) %>%
     st_as_sf() %>%
     select(NAME_1) %>%
