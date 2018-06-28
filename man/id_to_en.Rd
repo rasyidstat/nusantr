@@ -17,7 +17,7 @@ en_to_id(x)
 Translate day/month name (Indonesia <-> English)
 }
 \examples{
-x <- "26 Februari 2019"
+x <- "1 Januari 2020"
 y <- id_to_en(x)
 y
 en_to_id(y)

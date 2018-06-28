@@ -59,3 +59,16 @@ NULL
 #' @source \href{https://pilkada2017.kpu.go.id}{https://pilkada2017.kpu.go.id}
 #'
 "nama"
+
+#' Transjakarta halte data
+#'
+#' Lists of Transjakarta halte with latitude and longitude (as per 25 June 2018)
+#'
+#' @docType data
+#'
+#' @md
+#' @format A tibble containing lists of Transjakarta halte
+#'
+#' @source \href{https://www.trafi.com/id/jakarta/transjakarta}{https://www.trafi.com/id/jakarta/transjakarta}
+#'
+"transjakarta"

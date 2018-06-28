@@ -1,5 +1,6 @@
-# nusantr 0.3.1.0001
+# nusantr 0.3.2
 * Remove `theme_spatial`
+* Add `transjakarta` dataset
 
 # nusantr 0.3.1
 * Add MIT license
