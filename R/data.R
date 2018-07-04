@@ -72,3 +72,14 @@ NULL
 #' @source \href{https://www.trafi.com/id/jakarta/transjakarta}{https://www.trafi.com/id/jakarta/transjakarta}
 #'
 "transjakarta"
+
+#' Indonesian stop words data
+#'
+#' Lists of Indonesian stop words
+#'
+#' @docType data
+#'
+#' @md
+#' @format A tibble containing lists of Indonesian stop words
+#'
+"kata_setop"

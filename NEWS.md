@@ -1,6 +1,7 @@
 # nusantr 0.3.2
 * Remove `theme_spatial`
 * Add `transjakarta` dataset
+* Add Indonesian stop words data
 
 # nusantr 0.3.1
 * Add MIT license
