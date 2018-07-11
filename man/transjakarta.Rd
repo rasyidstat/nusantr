@@ -4,7 +4,16 @@
 \name{transjakarta}
 \alias{transjakarta}
 \title{Transjakarta halte data}
-\format{A tibble containing lists of Transjakarta halte}
+\format{A tibble containing lists of Transjakarta halte with 6 variables:
+\describe{
+\item{halte_id}{Halte ID}
+\item{halte_name}{Name of the halte}
+\item{latitude}{Latitude}
+\item{longitude}{Longitude}
+\item{corridor_cnt}{Number of corridors pass through the halte}
+\item{schedule_id}{Lists of schedule ID / corridors pass through the halte (nested),
+used to be joined with \code{schedule_id} on \code{transjakarta_route} dataset}
+}}
 \source{
 \href{https://www.trafi.com/id/jakarta/transjakarta}{https://www.trafi.com/id/jakarta/transjakarta}
 }

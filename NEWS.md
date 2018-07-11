@@ -1,3 +1,7 @@
+# nusantr 0.3.3
+* Update `transjakarta` dataset by adding `schedule`
+* Add `transjakarta_route` dataset
+
 # nusantr 0.3.2
 * Remove `theme_spatial`
 * Add `transjakarta` dataset

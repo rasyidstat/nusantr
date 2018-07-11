@@ -67,11 +67,46 @@ NULL
 #' @docType data
 #'
 #' @md
-#' @format A tibble containing lists of Transjakarta halte
+#' @format A tibble containing lists of Transjakarta halte with 6 variables:
+#' \describe{
+#'   \item{halte_id}{Halte ID}
+#'   \item{halte_name}{Name of the halte}
+#'   \item{latitude}{Latitude}
+#'   \item{longitude}{Longitude}
+#'   \item{corridor_cnt}{Number of corridors pass through the halte}
+#'   \item{schedule_id}{Lists of schedule ID / corridors pass through the halte (nested),
+#'   used to be joined with `schedule_id` on `transjakarta_route` dataset}
+#' }
 #'
 #' @source \href{https://www.trafi.com/id/jakarta/transjakarta}{https://www.trafi.com/id/jakarta/transjakarta}
 #'
 "transjakarta"
+
+#' Transjakarta route data
+#'
+#' Lists of Transjakarta route with geometry (as per 25 June 2018)
+#'
+#' @docType data
+#'
+#' @md
+#' @format A tibble and sf data frame containing lists of Transjakarta route with 11 variables:
+#' \describe{
+#'   \item{transport_id}{Two types of transport ID: night bus or usual bus}
+#'   \item{schedule_id}{Schedule ID which refers to corridor}
+#'   \item{corridor_id}{Short name of the corridor}
+#'   \item{corridor_name}{Name of the corridor}
+#'   \item{corridor_color}{Color of the corridor}
+#'   \item{route_id}{Specific route under corridor}
+#'   \item{route_name}{Name of the route under the corridor}
+#'   \item{direction}{1 for normal direction, 2 for reverse direction}
+#'   \item{validity}{Validity of the corridor}
+#'   \item{is_hidden}{Hidden or not based on the usability}
+#'   \item{geometry}{Route polyline geometry}
+#' }
+#'
+#' @source \href{https://www.trafi.com/id/jakarta/transjakarta}{https://www.trafi.com/id/jakarta/transjakarta}
+#'
+"transjakarta_route"
 
 #' Indonesian stop words data
 #'
