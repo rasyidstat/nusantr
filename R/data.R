@@ -100,7 +100,8 @@ NULL
 #'   \item{route_name}{Name of the route under the corridor}
 #'   \item{direction}{1 for normal direction, 2 for reverse direction}
 #'   \item{validity}{Validity of the corridor}
-#'   \item{is_hidden}{Hidden or not based on the usability}
+#'   \item{is_main}{Main corridor route or not}
+#'   \item{is_main_reverse}{Main corridor reverse route or not}
 #'   \item{geometry}{Route polyline geometry}
 #' }
 #'
