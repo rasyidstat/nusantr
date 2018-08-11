@@ -18,3 +18,4 @@ Imports:
     ggplot2,
     dplyr
 RoxygenNote: 6.0.1
+Suggests: testthat
