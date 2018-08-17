@@ -1,5 +1,5 @@
 .onAttach <- function(libname, pkgname) {
-  w <- floor(getOption("width")/1.75)
+  w <- floor(getOption("width")/1.8)
   t <- " Welcome to nusantr "
   s <- paste(rep("\U1F1EE\U1F1E9", floor((w-nchar(t))/2)), collapse = "")
   bti <- "BhinnekaTunggalIka"
