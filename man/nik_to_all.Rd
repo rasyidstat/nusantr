@@ -2,7 +2,6 @@
 % Please edit documentation in R/util.R
 \name{nik_to_all}
 \alias{nik_to_all}
-\alias{nik_to_all}
 \alias{nik_to_gender}
 \alias{nik_to_bd}
 \alias{nik_to_city}

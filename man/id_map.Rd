@@ -4,8 +4,8 @@
 \alias{id_map}
 \title{Get spatial data frame of Indonesia or Jakarta map}
 \usage{
-id_map(region = "jakarta", level = "default", folder = system.file("data",
-  "spatial", package = "nusantr"))
+id_map(region = "jakarta", level = "default",
+  folder = system.file("data", "spatial", package = "nusantr"))
 }
 \arguments{
 \item{region}{\code{jakarta} or \code{indonesia}}

@@ -2,7 +2,6 @@
 % Please edit documentation in R/download_map.R
 \name{map_download}
 \alias{map_download}
-\alias{map_download}
 \alias{map_convert}
 \title{Get Indonesia map from GADM}
 \usage{
@@ -10,9 +9,9 @@ map_download(folder = paste0(system.file("data", package = "nusantr"),
   "/raw"), filename = "file.zip",
   url = "http://biogeo.ucdavis.edu/data/gadm2.8/shp/IDN_adm_shp.zip")
 
-map_convert(folder = paste0(system.file("data", package = "nusantr"), "/raw"),
-  filename = "file.zip", output = system.file("data/spatial", package =
-  "nusantr"))
+map_convert(folder = paste0(system.file("data", package = "nusantr"),
+  "/raw"), filename = "file.zip", output = system.file("data/spatial",
+  package = "nusantr"))
 }
 \arguments{
 \item{folder}{download folder location}

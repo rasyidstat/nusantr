@@ -1,3 +1,12 @@
+# nusantr 0.3.5
+* Add `krl` dataset
+* Add `krl_price` to get KRL price
+
+# nusantr 0.3.4.5817
+* Add startup message
+* Add `testthat`
+* Update `transjakarta` dataset
+
 # nusantr 0.3.3
 * Update `transjakarta` dataset by adding `schedule`
 * Add `transjakarta_route` dataset

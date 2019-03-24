@@ -2,7 +2,6 @@
 % Please edit documentation in R/lang.R
 \name{id_to_en}
 \alias{id_to_en}
-\alias{id_to_en}
 \alias{en_to_id}
 \title{Translate day/month name (Indonesia <-> English)}
 \usage{
