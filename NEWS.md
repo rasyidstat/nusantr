@@ -1,5 +1,5 @@
 # nusantr 0.3.5
-* Add `krl` dataset
+* Add `krl` and `krl_route` dataset
 * Add `krl_price` to get KRL price
 
 # nusantr 0.3.4.5817

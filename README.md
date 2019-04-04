@@ -8,7 +8,7 @@ nusantr: Indonesia R package <img src="man/figures/logo.png" align="right" heigh
 `nusantr` is an R package which contains:
 
 -   Indonesia map in spatial data frame format (Indonesia map should be downloaded first on [GADM](https://gadm.org/))
--   Datasets related to Indonesia such as: Transjakarta data, Indonesia name data, etc.
+-   Datasets related to Indonesia such as: Transjakarta data, KRL data, Indonesia name data, etc.
 -   A simple function to convert [NIK](https://en.wikipedia.org/wiki/Indonesian_identity_card) to location, gender and birthdate.
 
 Installation
@@ -25,6 +25,8 @@ devtools::install_github("rasyidstat/nusantr")
 
 Example
 -------
+
+### Indonesia Map
 
 You can get Indonesia map by using `id_map` function that will return sf spatial data frame. It contains two parameters: region and level and currently only contains two regions: "indonesia" and "jakarta".
 
@@ -49,27 +51,33 @@ jakarta_kelurahan
 #> epsg (SRID):    4326
 #> proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #> # A tibble: 377 x 9
-#>   provinsi_id provinsi  kota_id kota   kecamatan_id kecamatan kelurahan_id
-#>   <chr>       <chr>     <chr>   <chr>  <chr>        <chr>     <chr>       
-#> 1 31          DKI Jaka… 3171    Jakar… 3171010      Jagakarsa 3171010001  
-#> 2 31          DKI Jaka… 3172    Jakar… 3172020      Ciracas   3172020001  
-#> 3 31          DKI Jaka… 3172    Jakar… 3172030      Cipayung  3172030001  
-#> 4 31          DKI Jaka… 3172    Jakar… 3172030      Cipayung  3172030003  
-#> 5 31          DKI Jaka… 3172    Jakar… 3172010      Pasar Re… 3172010001  
-#> # ... with 372 more rows, and 2 more variables: kelurahan <chr>,
+#>   provinsi_id provinsi kota_id kota  kecamatan_id kecamatan kelurahan_id
+#>   <chr>       <chr>    <chr>   <chr> <chr>        <chr>     <chr>       
+#> 1 31          DKI Jak… 3171    Jaka… 3171010      Jagakarsa 3171010001  
+#> 2 31          DKI Jak… 3172    Jaka… 3172020      Ciracas   3172020001  
+#> 3 31          DKI Jak… 3172    Jaka… 3172030      Cipayung  3172030001  
+#> 4 31          DKI Jak… 3172    Jaka… 3172030      Cipayung  3172030003  
+#> 5 31          DKI Jak… 3172    Jaka… 3172010      Pasar Re… 3172010001  
+#> # … with 372 more rows, and 2 more variables: kelurahan <chr>,
 #> #   geometry <POLYGON [°]>
+```
 
+### Datasets
+
+There are various datasets included on this package such as: Transjakarta data, KRL data, Indonesia name data, etc.
+
+``` r
 # transjakarta halte data
 transjakarta
 #> # A tibble: 1,555 x 6
-#>   halte_id         halte_name  latitude longitude corridor_cnt schedule_id
-#>   <chr>            <chr>          <dbl>     <dbl>        <int> <list>     
-#> 1 idjkb_1-10 Sari… Sarinah        -6.19      107.           10 <chr [10]> 
-#> 2 idjkb_1-11 Bank… Bank Indon…    -6.18      107.            9 <chr [9]>  
-#> 3 idjkb_1-12 Monas Monumen Na…    -6.18      107.           16 <chr [16]> 
-#> 4 idjkb_1-13 Harm… Harmoni        -6.17      107.           18 <chr [18]> 
-#> 5 idjkb_1-14 Sawa… Sawah Besar    -6.16      107.            5 <chr [5]>  
-#> # ... with 1,550 more rows
+#>   halte_id          halte_name  latitude longitude corridor_cnt schedule_id
+#>   <chr>             <chr>          <dbl>     <dbl>        <int> <list>     
+#> 1 idjkb_1-10 Sarin… Sarinah        -6.19      107.           10 <chr [10]> 
+#> 2 idjkb_1-11 Bank … Bank Indon…    -6.18      107.            9 <chr [9]>  
+#> 3 idjkb_1-12 Monas  Monumen Na…    -6.18      107.           16 <chr [16]> 
+#> 4 idjkb_1-13 Harmo… Harmoni        -6.17      107.           18 <chr [18]> 
+#> 5 idjkb_1-14 Sawah… Sawah Besar    -6.16      107.            5 <chr [5]>  
+#> # … with 1,550 more rows
 
 # transjakarta route data
 transjakarta_route
@@ -87,10 +95,12 @@ transjakarta_route
 #> 3 idjkb_brt    idjkb_1     1           Blok M - Kota D02027        
 #> 4 idjkb_brt    idjkb_1     1           Blok M - Kota D02027        
 #> 5 idjkb_brt    idjkb_1     1           Blok M - Kota D02027        
-#> # ... with 477 more rows, and 7 more variables: route_id <chr>,
+#> # … with 477 more rows, and 7 more variables: route_id <chr>,
 #> #   route_name <chr>, direction <int>, validity <chr>, is_main <lgl>,
 #> #   is_main_reverse <lgl>, geometry <LINESTRING [°]>
 ```
+
+### NIK
 
 You also can convert [NIK](https://en.wikipedia.org/wiki/Indonesian_identity_card) (*Nomor Induk Kependudukan*) or KTP ID to location (city and province), gender and birthdate using `nik_to_all`, `nik_to_gender`, `nik_to_bd`, `nik_to_city` or `nik_to_prov`.
 

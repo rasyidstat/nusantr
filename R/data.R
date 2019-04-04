@@ -119,3 +119,36 @@ NULL
 #' @format A tibble containing lists of Indonesian stop words
 #'
 "kata_setop"
+
+#' KRL station data
+#'
+#' Lists of KRL station with latitude and longitude
+#'
+#' @docType data
+#'
+#' @md
+#' @format A tibble containing lists of KRL station
+#'
+"krl"
+
+#' KRL route data
+#'
+#' Lists of KRL route with geometry (as per 25 June 2018)
+#'
+#' @docType data
+#'
+#' @md
+#' @format A tibble containing lists of KRL route
+#'
+"krl_route"
+
+#' KRL price data
+#'
+#' Lists of KRL route price
+#'
+#' @docType data
+#'
+#' @md
+#' @format A tibble containing lists of KRL price
+#'
+"krl_price"

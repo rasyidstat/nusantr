@@ -21,7 +21,7 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 `nusantr` is an R package which contains: 
 
 - Indonesia map in spatial data frame format (Indonesia map should be downloaded first on [GADM](https://gadm.org/))
-- Datasets related to Indonesia such as: Transjakarta data, Indonesia name data, etc. 
+- Datasets related to Indonesia such as: Transjakarta data, KRL data, Indonesia name data, etc. 
 - A simple function to convert [NIK](https://en.wikipedia.org/wiki/Indonesian_identity_card) to location, gender and birthdate.
 
 ## Installation
@@ -36,6 +36,8 @@ devtools::install_github("rasyidstat/nusantr")
 ```
 
 ## Example
+
+### Indonesia Map
 
 You can get Indonesia map by using `id_map` function that will return sf spatial data frame. It contains two parameters: region and level and currently only contains two regions: "indonesia" and "jakarta".
 
@@ -53,13 +55,21 @@ library(nusantr)
 # get jakarta map for 'kelurahan' level
 jakarta_kelurahan <- id_map("jakarta", "kelurahan")
 jakarta_kelurahan
+```
 
+### Datasets
+
+There are various datasets included on this package such as: Transjakarta data, KRL data, Indonesia name data, etc.
+
+```{r}
 # transjakarta halte data
 transjakarta
 
 # transjakarta route data
 transjakarta_route
 ```
+
+### NIK
 
 You also can convert [NIK](https://en.wikipedia.org/wiki/Indonesian_identity_card) (*Nomor Induk Kependudukan*) or KTP ID to location (city and province), gender and birthdate using `nik_to_all`, `nik_to_gender`, `nik_to_bd`, `nik_to_city` or `nik_to_prov`.
 
