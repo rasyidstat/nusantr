@@ -164,3 +164,52 @@ nik_to_prov <- function (nik, type = "default") {
               abb = with(provinsi, provinsi_abb[match(x, provinsi_id)]))
   x
 }
+
+
+
+#' Get KRL price
+#'
+#' @description
+#' Get KRL price based on `krl_price` dataset. Use `find_krl_station` to find the
+#' KRL station exact name, code or ID as the input of this function.
+#'
+#' @md
+#' @param sts_origin origin KRL station name
+#' @param sts_dest destination KRL station name
+#' @param type type of station name input (`name`, `code` or `id`)
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' get_krl_price("Ancol", "Sudirman")
+#' }
+get_krl_price <- function (sts_origin, sts_dest, type = "name") {
+  x <- switch(type,
+              name = subset(krl_price, sts_from_name == sts_origin & sts_to_name == sts_dest)$price,
+              code = subset(krl_price, sts_from_code == sts_origin & sts_to_code == sts_dest)$price,
+              id = subset(krl_price, sts_from_id == sts_origin & sts_to_id == sts_dest)$price)
+  x
+}
+
+#' Find KRL station name
+#'
+#' @description
+#' Find KRL station name using `agrep` R base function.
+#'
+#' @md
+#' @param station_name KRL station name or keyword
+#' @param type type of station name input (`name`, `code` or `id`)
+#' @param ... other `agrep` additional parameters
+#'
+#' @export
+#' @examples
+#' \dontrun{
+#' find_krl_station("stasiun sudirman")
+#' }
+find_krl_station <- function (sts_name, type = "name", max = 2, ...) {
+  x <- switch(type,
+              name = agrep(sts_name, krl$station_name, value = TRUE, ignore.case = TRUE, ...),
+              code = agrep(sts_name, unique(krl_price$sts_from_code), value = TRUE, ignore.case = TRUE, ...),
+              id = agrep(sts_name, unique(krl_price$sts_from_id), value = TRUE, ignore.case = TRUE, ...))
+  x
+}
