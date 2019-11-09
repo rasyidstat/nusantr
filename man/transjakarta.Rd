@@ -21,6 +21,6 @@ used to be joined with \code{schedule_id} on \code{transjakarta_route} dataset}
 transjakarta
 }
 \description{
-Lists of Transjakarta halte with latitude and longitude (as per 25 June 2018)
+Lists of Transjakarta halte with latitude and longitude (as per 7 November 2019)
 }
 \keyword{datasets}

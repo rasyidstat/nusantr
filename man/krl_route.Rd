@@ -9,6 +9,6 @@
 krl_route
 }
 \description{
-Lists of KRL route with geometry (as per 25 June 2018)
+Lists of KRL route with geometry
 }
 \keyword{datasets}

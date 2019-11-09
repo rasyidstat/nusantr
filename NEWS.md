@@ -1,3 +1,6 @@
+# nusantr 0.3.6
+* Update `transjakarta` (version 2019)
+
 # nusantr 0.3.5
 * Add `krl` and `krl_route` dataset
 * Add `krl_price` to get KRL price

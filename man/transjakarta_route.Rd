@@ -26,6 +26,6 @@
 transjakarta_route
 }
 \description{
-Lists of Transjakarta route with geometry (as per 25 June 2018)
+Lists of Transjakarta route with geometry (as per 7 November 2019)
 }
 \keyword{datasets}

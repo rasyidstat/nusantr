@@ -62,7 +62,7 @@ NULL
 
 #' Transjakarta halte data
 #'
-#' Lists of Transjakarta halte with latitude and longitude (as per 25 June 2018)
+#' Lists of Transjakarta halte with latitude and longitude (as per 7 November 2019)
 #'
 #' @docType data
 #'
@@ -84,7 +84,7 @@ NULL
 
 #' Transjakarta route data
 #'
-#' Lists of Transjakarta route with geometry (as per 25 June 2018)
+#' Lists of Transjakarta route with geometry (as per 7 November 2019)
 #'
 #' @docType data
 #'
@@ -133,7 +133,7 @@ NULL
 
 #' KRL route data
 #'
-#' Lists of KRL route with geometry (as per 25 June 2018)
+#' Lists of KRL route with geometry
 #'
 #' @docType data
 #'
